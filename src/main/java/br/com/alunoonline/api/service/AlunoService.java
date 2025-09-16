@@ -10,7 +10,6 @@ public class AlunoService {
 
     @Autowired
     private AlunoRepository alunoRepository;
-    //de onde vem esse atributo 'alunoRepository'
 
     public void criarAluno(Aluno aluno){
         alunoRepository.save(aluno);
