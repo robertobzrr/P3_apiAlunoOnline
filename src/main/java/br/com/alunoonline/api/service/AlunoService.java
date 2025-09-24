@@ -12,6 +12,7 @@ public class AlunoService {
     private AlunoRepository alunoRepository;
 
     public void criarAluno(Aluno aluno){
+
         alunoRepository.save(aluno);
     }
 
