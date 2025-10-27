@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/professores")
 public class ProfessorController {
@@ -21,6 +24,24 @@ public class ProfessorController {
     @ResponseStatus(HttpStatus.CREATED)
     public void criarProfessor(@RequestBody Professor prof){
         professorService.criarProfessor(prof);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Professor> buscarTodosProfessor(){
+        return professorService.buscarTodosProfessor();
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Optional<Professor> buscarProfessorPorId(@PathVariable Long id){
+        return professorService.buscarProfessorPorId(id);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarProfessorPorId(@PathVariable Long id){
+        professorService.deletarProfessorPorId(id);
     }
 
 
