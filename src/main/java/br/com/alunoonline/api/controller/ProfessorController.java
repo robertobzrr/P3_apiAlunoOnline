@@ -44,5 +44,10 @@ public class ProfessorController {
         professorService.deletarProfessorPorId(id);
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void atualizarProfessorPorId(@PathVariable Long id, @RequestBody Professor atualizarProfessor){
+        professorService.atualizarProfessorPorId(id, atualizarProfessor);
+    }
 
 }
