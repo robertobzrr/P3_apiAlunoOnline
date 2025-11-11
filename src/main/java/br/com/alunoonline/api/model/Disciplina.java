@@ -17,6 +17,7 @@ public class Disciplina {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private  String nomeDisciplina;
+
     @ManyToOne
     @JoinColumn(name = "professor_id")
     private Professor professor;
