@@ -29,6 +29,7 @@ public class MatriculaAluno {
     private Double nota1;
     private Double nota2;
 
+    @Enumerated(EnumType.STRING)
     private MatriculaStatusEnum status;
 
 }
