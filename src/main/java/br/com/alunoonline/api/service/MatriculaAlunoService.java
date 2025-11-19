@@ -37,6 +37,10 @@ public class MatriculaAlunoService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Só é possível trancar com o status matriculado");
         }
 
+    }
+
+
+    public void atualizarNotas(Long id){
 
     }
 
