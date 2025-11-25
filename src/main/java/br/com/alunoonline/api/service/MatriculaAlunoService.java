@@ -77,9 +77,10 @@ public class MatriculaAlunoService {
         Double nota1 = matriculaAluno.getNota1();
         Double nota2 = matriculaAluno.getNota2();
 
-        Double media = calcularMedia(nota1, nota2);
-        matriculaAluno.setStatus(media >= MEDIA_PARA_APROVACAO ? MatriculaStatusEnum.APROVADO : MatriculaStatusEnum.REPROVADO);
-
+        if(nota1 != null && nota2 != null){
+            Double media = calcularMedia(nota1, nota2);
+            matriculaAluno.setStatus(media >= MEDIA_PARA_APROVACAO ? MatriculaStatusEnum.APROVADO : MatriculaStatusEnum.REPROVADO);
+        }
     }
 
 
